@@ -1,0 +1,54 @@
+<div class="flex justify-center h-screen">
+  <div class="lg:container animate-fade-in w-full pr-4 pl-4 mt-5">
+
+    <div
+      class="text-1xl font-bold text-blue-800 flex mb-3 p-1  tracking-widest float-left bg-slate-200 rounded-2xl pokefont cursor-pointer "
+      (click)="back()">
+      <mat-icon>arrow_back_ios</mat-icon> voltar
+    </div>
+    <div class="flex justify-center w-full mp-2">
+      <h1 class="text-4xl font-bold text-blue-800 p-title tracking-widest bg-slate-200 rounded-2xl pokefont">
+        Monte Seu Baralho
+      </h1>
+    </div>
+
+    <div class="bg-slate-200 bg-opacity-90 p-4 rounded-2xl flex flex-col " [class.fixed-div]="isFixed">
+      <div class="bg-slate-200 bg-opacity-90 p-4 rounded-2xl flex items-center w-full">
+        <form [formGroup]="deckForm" (ngSubmit)="saveDeck()">
+          <input type="text" formControlName="name" placeholder="Nome do Baralho" class="mr-2">
+          <button mat-flat-button color="primary" type="submit">Salvar</button>
+        </form>
+      </div>
+      <div class="thumbnail-container fixed-height-container w-full" #scrollContainer>
+
+        <div *ngFor="let cardGroup of deckForm.get('cards').value; let i = index">
+          <button (click)="removeCard(i)">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+          <img [src]="cardGroup?.imageUrl" alt="{{ cardGroup?.name }}">
+        </div>
+      </div>
+      <div class="flex-info">
+        <div class="totalCards">Total de cartas : {{deckForm.get('cards').value?.length}}/60</div>
+      </div>
+    </div>
+
+    <div class="flex justify-center mt-3" [class.top-scroll]="isFixed">
+      <h1
+        class="text-4xl font-bold text-blue-800 p-title tracking-widest bg-slate-200 bg-opacity-100 rounded-2xl m-3 pokefont">
+        Cartas
+      </h1>
+    </div>
+
+    <div class="bg-slate-200 bg-opacity-60 p-4 rounded-2xl flex items-center">
+      <div class="card-container">
+        <div class="card relative" *ngFor="let card of cards">
+          <button (click)="addCard(card)">
+            Adicionar
+          </button>
+          <img [src]="card.imageUrlHiRes " alt="{{ card.name }}" class="card-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

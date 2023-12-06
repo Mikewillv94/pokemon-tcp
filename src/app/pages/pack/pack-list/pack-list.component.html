@@ -1,0 +1,64 @@
+<div class="flex justify-center pt-20 h-screen">
+  <div class="lg:container animate-fade-in w-full pr-4 pl-4">
+    <div class="flex justify-center">
+      <h1
+        class="card-border text-4xl font-bold text-blue-800 p-title tracking-widest bg-slate-200 bg-opacity-100 rounded-2xl m-3 pokefont">
+        Lista de Baralhos
+      </h1>
+    </div>
+    <div class="bg-slate-200 bg-opacity-60 p-4 rounded-2xl flex items-center">
+      <mat-form-field class="w-full bg-white bg-opacity-100 rounded-2xl pr-3 pl-3 pt-3">
+        <mat-label>Pesquisar Baralhos</mat-label>
+        <input class="w-full" matInput (keyup)="applyFilter($event)" placeholder="baralho" #input>
+        <button mat-button matSuffix>
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+      <button class="btn-basic ml-3" (click)="createDeck()">
+        Criar 
+      </button>
+    </div>
+    <div class="mt-3 p-4 rounded-2xl bg-slate-200 bg-opacity-60">
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort >
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 80%; "> Name do baralho </th>
+            <td mat-cell *matCellDef="let row" style="width: 80%;"> {{row?.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="icons">
+            <th mat-header-cell *matHeaderCellDef  style="min-width: 130px; text-align: center;"> Ação </th>
+            <td mat-cell *matCellDef="let row" style="min-width: 130px;">
+              <div class="icons">
+                <mat-icon matTooltip="Detalhes" (click)="visibilityDeck(row?.id)">visibility</mat-icon>
+                <mat-icon matTooltip="Editar" (click)="editDeck(row?.id)" >edit</mat-icon>
+                <mat-icon matTooltip="Delete" (click)="deleteDeck(row?.id)">delete_forever</mat-icon>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="3">
+              <div class="w-full flex flex-col items-center pt-10 pb-10">
+                <img width="100" src="assets/image/detetive pikachu.png" />
+                <span>Nenhum baralho encontrado</span>
+              </div>
+
+            </td>
+          </tr>
+       
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

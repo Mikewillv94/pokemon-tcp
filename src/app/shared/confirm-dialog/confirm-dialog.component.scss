@@ -1,0 +1,11 @@
+h2 {
+    text-align: center;
+}
+
+mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    button {
+        border-radius: 50px;
+    }
+}

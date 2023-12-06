@@ -1,0 +1,145 @@
+.p-title {
+  padding: 5px 20px 15px 20px;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  @media (max-width: 927px) {
+    justify-content: space-evenly;
+  }
+
+  .card {
+    flex: 1 1 200px;
+    max-width: 230px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+
+    button {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.50);
+      z-index: 1000;
+      position: relative;
+
+      button {
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #1e40afde;
+        padding: 4px 15px;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 500;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.flex-info {
+  padding: 20px 0px;
+
+  .totalCards {
+    font-weight: 600;
+    color: #1E40AF;
+    background: white;
+    border-radius: 1rem;
+    padding: 10px;
+
+    span{
+      color: balck
+    }
+  }
+
+  .colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    font-weight: 600;
+    background: white;
+    border-radius: 1rem;
+    padding: 10px;
+
+    span {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    span:nth-child(1) {
+      mat-icon {
+        color: rgb(6, 179, 35);
+      }
+    }
+
+    span:nth-child(2) {
+      mat-icon {
+        color: rgb(255, 17, 0);
+      }
+    }
+
+    span:nth-child(3) {
+      mat-icon {
+        color: rgb(0, 119, 255);
+      }
+    }
+
+    span:nth-child(4) {
+      mat-icon {
+        color: yellow;
+      }
+    }
+
+    span:nth-child(5) {
+      mat-icon {
+        color: purple;
+      }
+    }
+
+    span:nth-child(6) {
+      mat-icon {
+        color: brown;
+      }
+    }
+
+    span:nth-child(7) {
+      mat-icon {
+        color: rgb(12, 10, 10);
+      }
+    }
+
+    span:nth-child(8) {
+      mat-icon {
+        color: grey;
+      }
+    }
+
+    span:nth-child(9) {
+      mat-icon {
+        color: pink;
+      }
+    }
+  }
+
+  .cardQtde{
+    font-weight: 600;
+    background: white;
+    border-radius: 1rem;
+    padding: 10px;
+  }
+
+}

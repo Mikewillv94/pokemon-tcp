@@ -1,0 +1,48 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('assets/image/pack-cards.png'); 
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+@font-face {
+    font-family: 'Pokemon';
+    src: url('../src/assets/fonts/Pokemon\ Solid.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+
+  .pokefont {
+    font-family: 'Pokemon', sans-serif !important;
+    letter-spacing: 4px !important;
+  }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+
+.card-border {
+  border: 7px solid #1E40AF
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

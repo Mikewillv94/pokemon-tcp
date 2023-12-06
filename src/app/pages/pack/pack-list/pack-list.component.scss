@@ -1,0 +1,62 @@
+.p-title {
+    padding: 5px 20px 15px 20px;
+    letter-spacing: 4px
+}
+
+table {
+    width: 100%;
+}
+
+.mat-table {
+    border-radius: 1rem 1rem 0px 0px; 
+    overflow: hidden;
+}
+
+.mat-paginator {
+    border-radius: 0px 0px 1rem 1rem; 
+    overflow: hidden;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+
+th {
+    // width: 25%;
+    font-size: 17px;
+    color: #1E40AF;
+}
+
+.btn-basic{
+    display: flex;
+    justify-content: center;
+    padding: 10px ;
+    line-height:1.2rem;
+    width: 10%;
+    min-width: 90px;
+    border: 3px solid #1E40AF;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1E40AF;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+
+    mat-icon:nth-child(1){
+        color: rgb(19, 223, 87);
+    }
+
+    mat-icon:nth-child(2){
+        color: rgb(0, 89, 255);
+    }
+
+    mat-icon:nth-child(3){
+        color: rgb(236, 22, 6);
+    }
+}
