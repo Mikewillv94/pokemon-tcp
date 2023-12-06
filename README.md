@@ -55,7 +55,7 @@ O projeto possui as seguintes funcionalidades principais:
 
 Certifique-se de ter as seguintes dependências instaladas:
 
-- Node.js (v20.10.0 ou superior)
+- Node.js (v16.20.2 ou superior)
 - Angular CLI (v13.3.9)
 
 ### Configuração do Ambiente
